@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/train.css') }}">
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <title>Train a QA model!</title>
+</head>
+
+<body>
+  <div class="title">
+    <div class="title-text">Training</div>
+    <div class="title-text2">Select which annotations you want to train your model with!</div>
+  </div>
+  <div class="panels">
+    <div class="panel" id="selection-panel">
+      <!-- Table Panel -->
+      <div id="selectionTable">
+        <input class="search" placeholder="Search for annotations">
+        <table>
+          <thead>
+            <tr>
+              <th>
+                <div class="checkbox"><input type="checkbox" id="selectAll"></div>
+              </th>
+              <th class="sort" data-sort="username">Username</th>
+              <th class="sort" data-sort="datetime">Time Annotated</th>
+              <th class="sort" data-sort="num_docs"># Documents</th>
+            </tr>
+          </thead>
+          <tbody class="list">
+            {% for row in table %}
+            <tr>
+              <td class="checkbox-cell">
+                <div class="checkbox"><input type="checkbox" data-session="{{ row[0] }}"></div>
+              </td>
+              <td class="username">{{ row[1] }}</td>
+              <td class="datetime">{{ row[2] }}</td>
+              <td class="num_docs">{{ row[3] }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="panel" id="model-panel">
+      <!-- Model Selection Panel -->
+      <label for="model-dropdown">Choose a model architecture:</label>
+      <select class="dropdown-menu" id="model-dropdown">
+        <option value="" selected disabled>Select an option</option>
+        <option value="roberta">RoBERTa</option>
+        <option value="impira">LayoutLM</option>
+      </select>
+      <input type="text" id="modelName" maxlength="128" placeholder="Model Name" oninput="this.value = this.value.replace(/[^a-zA-Z0-9_-]/, '')">
+      <button id="train-button" onclick="trainModel()">Train!</button>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.all.min.js"></script>
+  <script src="{{ url_for('static', filename='js/train.js') }}"></script>
+  <script>const existing_model_ids = {{ models | safe }};</script>
+</body>
+
+</html>

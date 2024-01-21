@@ -1,0 +1,14 @@
+accelerate>=0.15.0.dev0
+datasets==2.8.0
+Flask==2.2.3
+numpy==1.23.4
+PyMuPDF==1.22.0
+SQLAlchemy==2.0.17
+torch==1.13.0
+tqdm==4.64.1
+transformers>=4.26.0.dev0
+Werkzeug==2.2.3
+mysql-connector-python>=8.0.28
+Flask-Login>=0.6.0
+celery==5.3.1
+redis==4.6.0

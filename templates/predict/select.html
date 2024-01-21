@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/predict/select.css') }}">
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <title>Select which model to use!</title>
+</head>
+
+<body>
+  <div class="title">
+    <div class="title-text">Prediction</div>
+    <div class="title-text2">Select which model you want to make inferences with!</div>
+  </div>
+  <div class="panels">
+    <div class="panel" id="selection-panel">
+      <div id="selectionTable">
+        <div id="search-header">
+          <input class="search" placeholder="Search for annotations">
+          <button id="model-select" onclick="selectModel()" disabled>Select</button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th class="sort" data-sort="model_id">Model ID</th>
+              <th class="sort" data-sort="architecture">Architecture</th>
+              <th class="sort" data-sort="username">Username</th>
+              <th class="sort" data-sort="datetime">Time Trained</th>
+            </tr>
+          </thead>
+          <tbody class="list" id="table-body">
+            {% for row in models %}
+            <tr>
+              <td class="checkbox-cell">
+                <input type="radio" name="model_id" value="{{ row[0] }}">
+              </td>
+              <td class="model_id">{{ row[0] }}</td>
+              <td class="architecture">{{ row[1] }}</td>
+              <td class="username">{{ row[2] }}</td>
+              <td class="datetime">{{ row[3] }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.all.min.js"></script>
+  <script src="{{ url_for('static', filename='js/predict/select.js') }}"></script>
+</body>
+
+</html>

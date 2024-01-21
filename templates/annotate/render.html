@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/annotate/render.css') }}">
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dealfonso/pdfjs-viewer@1.1.1/pdfjs-viewer.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <title>Highlight to annotate your PDFs!</title>
+</head>
+
+<body>
+  <div class="panels">
+    <div class="panel" id="selection-panel">
+      <div id="button-container">
+        <button id="home-button" class="button" onclick="window.location.href = '/';">
+          <i class="fa-solid fa-house"></i>
+        </button>
+        <button id="prev-button" class="button" onclick="prevPDF()">
+          <i class="fas fa-arrow-left"></i>
+        </button>
+        <div id="fileName">
+          <p>FILENAME</p>
+        </div>
+        <button id="next-button" class="button" onclick="nextPDF()">
+          <i class="fas fa-arrow-right"></i>
+        </button>
+        <button id="download-button" class="button" onclick="download()">
+          <i class="fa-solid fa-file-arrow-down"></i>
+        </button>
+      </div>
+      <div id="selectionTable">
+        <div id="textElements"></div>
+        <button id="addButton" onclick="addQuestion()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor"
+            stroke-width="3" viewBox="0 0 24 24">
+            <path d="M12 5v14M5 12h14" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="pdfjs-viewer" id="pdf-container">
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.all.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/dealfonso/pdfjs-viewer@1.0.1/pdfjs-viewer.min.js"></script>
+  <script src="{{ url_for('static', filename='js/annotate/render.js') }}"></script>
+</body>
+
+</html>

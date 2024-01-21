@@ -1,0 +1,264 @@
+:root {
+    font-family: 'Inter', sans-serif;
+    --highlight-color: rgba(255, 255, 255, 0);
+}
+
+@supports (font-variation-settings: normal) {
+    :root {
+        font-family: 'Inter var', sans-serif;
+    }
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #e8eaed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+.panels {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.panel {
+    background: #ffffff;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0px 7px 5px 0px rgba(0, 0, 0, 0.25);
+}
+
+#selection-panel {
+    width: 48%;
+    height: 87%;
+    margin-right: 2%;
+    margin-left: 2%;
+}
+
+#selectionTable {
+    width: 92%;
+    height: 84%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    overflow: auto;
+    gap: 4px;
+}
+
+#pdf-container {
+    width: 48%;
+    height: 100%;
+    border: none;
+    background-color: #e8eaed;
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
+}
+
+#button-container {
+    width: 92%;
+    height: 8%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.button,
+#fileName {
+    background-color: transparent;
+    border: none;
+    color: #002053;
+    font-weight: bold;
+    height: 90%;
+    font-size: 18px;
+}
+
+.button {
+    flex: 1;
+    border-radius: 5px;
+}
+
+#fileName {
+    flex: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 60%;
+}
+
+#fileName p {
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.button:hover {
+    background-color: #e8eaed;
+}
+
+canvas {
+    display: block;
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
+}
+
+.textLayer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    line-height: 1.0;
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
+}
+
+.textLayer>span {
+    position: absolute;
+    white-space: pre;
+    cursor: text;
+    transform-origin: 0% 0%;
+    color: transparent;
+    -webkit-user-select: text;
+    /* Safari */
+    -ms-user-select: text;
+    /* IE 10 and IE 11 */
+    user-select: text;
+    /* Standard syntax */
+    /* border: 1px solid red; */
+}
+
+#addButton {
+    height: 30px;
+    background-color: #fff;
+    color: #bfbfbf;
+    border: 2px dashed #bfbfbf;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+#addButton:hover {
+    color: #7ebf69;
+    border: 2px dashed #7ebf69;
+}
+
+#textElements {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 6px;
+}
+
+#textElements>div {
+    width: 100%;
+    /* height: 36px; */
+    display: flex;
+    gap: 10px;
+}
+
+#textElements>div>div {
+    flex: 1;
+    display: flex;
+    gap: 10px;
+    border-radius: 5px;
+}
+
+#textElements>div>div>textarea {
+    flex: 1;
+    font: 400 14px "Inter", sans-serif;
+    border: 2px solid #e8eaed;
+    border-radius: 5px;
+    padding: 4px;
+    white-space: normal;
+    resize: vertical;
+}
+
+#textElements>div>div>textarea::placeholder {
+    color: #ccc;
+}
+
+.focus {
+    animation: ring-animation 1s infinite;
+    outline: 3px solid rgba(59, 130, 246, 0.6);
+}
+
+@keyframes ring-animation {
+    0% {
+        box-shadow: 0 0 0 0px rgba(59, 130, 246, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.5);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0px rgba(59, 130, 246, 0.5);
+    }
+}
+
+textarea:focus, div:focus {
+    outline: none;
+}
+
+.deleteButton {
+    background-color: #f54e4e;
+    color: white;
+    border: none;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 4px;
+    width: fit-content;
+}
+
+.deleteButton:hover {
+    background-color: #f02b2b;
+}
+
+.pdfpage {
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
+}

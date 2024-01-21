@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>DocMaster - A Unified, Private QA System</title>
+</head>
+
+<body>
+  <div class="title">
+    <div class="title-text">DocMaster</div>
+    <div class="title-text2"> Develop a question answering model to answer questions for your PDFs! </div>
+  </div>
+  <div class="panels">
+    <div class="panel">
+      <div class="description-div">
+        <img src="/static/img/annotate-svg.svg" width="135" height="135">
+        <div class="description-text"> Upload your PDFs and choose your question-answer pairs!</div>
+      </div>
+      <div class="button-div">
+        <button class="panel-btn" onclick="location.href='/annotate/upload';">Annotate</button>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="description-div">
+        <img src="/static/img/teach-svg.svg" width="135" height="135">
+        <div class="description-text"> Teach your model to answer questions based on your examples! </div>
+      </div>
+      <div class="button-div">
+        <button class="panel-btn" onclick="location.href='/train';">Train</button>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="description-div">
+        <img src="/static/img/answer-svg.svg" width="135" height="135">
+        <div class="description-text"> Ask your model new questions and see how it performs! </div>
+      </div>
+      <div class="button-div">
+        <button class="panel-btn" onclick="location.href='/predict/select';">Predict</button>
+      </div>
+    </div>
+  </div>
+  <div id="user-logout">
+    <div>{{ current_user.username }}</div>
+    <button onclick="logout()">
+      <i class="fa-solid fa-right-from-bracket"></i>
+    </button>
+    <script>
+      async function logout() {
+        let response = await fetch('/logout');
+        if (response.ok && response.redirected) {
+          console.log("good");
+          console.log(response);
+          window.location = response.url;
+        }
+        else {
+          console.log("bad");
+          console.log(response);
+        }
+      }
+    </script>
+  </div>
+</body>
+
+</html>

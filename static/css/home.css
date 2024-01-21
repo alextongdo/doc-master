@@ -1,0 +1,145 @@
+:root {
+  font-family: 'Inter', sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+  :root {
+    font-family: 'Inter var', sans-serif;
+  }
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #e8eaed;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+}
+
+img {
+  width: 17vh;
+  height: 17vh;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  gap: 1.85vh;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 100%;
+  height: 20%;
+}
+
+.title-text {
+  color: #000000;
+  text-align: center;
+  font: 600 3vw "Inter", sans-serif;
+}
+
+.title-text2 {
+  color: #000000;
+  text-align: center;
+  font: 400 1.45vw "Inter", sans-serif;
+}
+
+.panels {
+  display: flex;
+  flex-direction: row;
+  gap: 2.8vw;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 80%;
+}
+
+.panel {
+  background: #ffffff;
+  border-radius: 1.4vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 25vw;
+  height: 70vh;
+  box-shadow: 0vh 0.85vh 0.62vh 0vh rgba(0, 0, 0, 0.25)
+}
+
+.panel-btn {
+  color: #ffffff;
+  font: 500 1.8vw "Inter", sans-serif;
+  align-items: center;
+  justify-content: center;
+  background: #002053;
+  border: none;
+  border-radius: 0.7vw;
+  width: 48%;
+  height: 40%;
+}
+
+.description-div {
+  padding: 0vw 2.8vw 0vw 2.8vw;
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.description-text {
+  color: #000000;
+  text-align: center;
+  font: 400 1.45vw "Inter", sans-serif;
+}
+
+.button-div {
+  padding: 0vw 2.8vw 0vw 2.8vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  height: 20%;
+}
+
+.panel-btn:hover {
+  background-image: linear-gradient(rgb(0 0 0/80%) 0 0);
+}
+
+#user-logout {
+  position: absolute;
+  right: 1.4vw;
+  top: 2.55vh;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#user-logout>button {
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  font-size: 2.26vh;
+}
+
+#user-logout>button:hover {
+  color: #f54e4e;
+}
+
+#user-logout>div {
+  align-items: center;
+  font: 500 2vh "Inter", sans-serif;
+  height: fit-content;
+  padding-bottom: 0.5vh;
+}

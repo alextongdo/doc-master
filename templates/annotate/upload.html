@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/annotate/upload.css') }}">
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>Upload some PDFs to annotate!</title>
+</head>
+
+<body>
+    <div class="panel" id="upload-panel">
+      <div class="file-upload">
+        <input type="file" id="fileInput" accept=".zip,.pdf">
+        <label for="fileInput" id="fileNameLabel">
+          <i class="fa-solid fa-cloud-arrow-up"></i>
+          <span>PDF or ZIP</span>
+        </label>
+      </div>
+
+      <button id="upload-button" onclick="upload_pdf()">Upload</button>
+    </div>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.all.min.js"></script>
+  <script src="{{ url_for('static', filename='js/annotate/upload.js') }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,222 @@
+:root {
+    font-family: 'Inter', sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+    :root {
+        font-family: 'Inter var', sans-serif;
+    }
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #e8eaed;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 100%;
+    height: 20%;
+    overflow: hidden;
+}
+
+.title-text {
+    color: #000000;
+    text-align: center;
+    font: 600 43px "Inter", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-text2 {
+    color: #000000;
+    text-align: center;
+    font: 400 21px "Inter", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.panels {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+}
+
+.panel {
+    background: #ffffff;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0px 7px 5px 0px rgba(0, 0, 0, 0.25);
+}
+
+#question-panel {
+    width: 60%;
+    height: 87%;
+    overflow-y: scroll;
+    box-sizing: border-box;
+    padding: 50px;
+    align-items: start;
+    justify-content: start;
+    gap: 10px;
+}
+
+#upload-panel {
+    width: 20%;
+    height: 40%;
+    gap: 10px;
+}
+
+.deleteButton {
+    background-color: #f54e4e;
+    color: white;
+    border: none;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 4px;
+    width: fit-content;
+}
+
+.deleteButton:hover {
+    background-color: #f02b2b;
+}
+
+#addButton {
+    width: 100%;
+    height: 30px;
+    background-color: #fff;
+    color: #bfbfbf;
+    border: 2px dashed #bfbfbf;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#addButton:hover {
+    color: #7ebf69;
+    border: 2px dashed #7ebf69;
+}
+
+#textElements {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#textElements>div {
+    width: 100%;
+    height: 32px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+#textElements>div>input[type="text"] {
+    font: 400 14px "Inter", sans-serif;
+    border: 2px solid #e8eaed;
+    border-radius: 5px;
+    width: 100%;
+    padding: 4px;
+}
+
+#textElements>div>input[type="text"]::placeholder {
+    color: #ccc;
+}
+
+@keyframes ring-animation {
+    0% {
+        box-shadow: 0 0 0 0px rgba(59, 130, 246, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.5);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0px rgba(59, 130, 246, 0.5);
+    }
+}
+
+input[type="text"]:focus {
+    animation: ring-animation 1s infinite;
+
+}
+
+#upload-button {
+    width: 80%;
+    font: 600 16px "Inter", sans-serif;
+    border: none;
+    height: 34px;
+    background-color: #002053;
+    color: white;
+    border-radius: 5px;
+}
+
+#upload-button:hover {
+    background-image: linear-gradient(rgb(0 0 0/80%) 0 0);
+}
+
+.file-upload {
+    display: flex;
+    width: 80%;
+    height: 50%;
+}
+
+#fileInput {
+    display: none;
+}
+
+#fileNameLabel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #bfbfbf;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#fileNameLabel i {
+    color: #bfbfbf;
+}
+
+#fileNameLabel span {
+    text-align: center;
+    color: #bfbfbf;
+    padding-right: 10px;
+    padding-left: 10px;
+}

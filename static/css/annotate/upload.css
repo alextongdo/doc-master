@@ -1,0 +1,89 @@
+:root {
+    font-family: 'Inter', sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+    :root {
+        font-family: 'Inter var', sans-serif;
+    }
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #e8eaed;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+.panel {
+    background: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
+}
+
+#upload-panel {
+    width: 30%;
+    height: 30%;
+    gap: 10px;
+}
+
+#upload-button {
+    width: 90%;
+    font: 600 16px "Inter", sans-serif;
+    border: none;
+    height: 34px;
+    background-color: #002053;
+    color: white;
+    border-radius: 5px;
+}
+
+#upload-button:hover {
+    background-image: linear-gradient(rgb(0 0 0/80%) 0 0);
+}
+
+.file-upload {
+    display: flex;
+    width: 90%;
+    height: 55%;
+}
+
+#fileInput {
+    display: none;
+}
+
+#fileNameLabel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #bfbfbf;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#fileNameLabel i {
+    color: #bfbfbf;
+}
+
+#fileNameLabel span {
+    text-align: center;
+    color: #bfbfbf;
+    padding-right: 10px;
+    padding-left: 10px;
+}
