@@ -4,12 +4,22 @@ DocMaster is a unified platform designed for annotating PDF documents, model tra
 ## Installation
 The simplest method to deploy DocMaster is to clone this repo and use the provided Docker Compose file.
 
-First, clone this repo.
+1. First, clone this repo.  
+`git clone git@github.com:alextongdo/doc-master.git`
 
-```git clone git@github.com:alextongdo/doc-master.git```
+2. Install Docker.  
+`https://docs.docker.com/get-docker/`
 
-Install Docker. https://docs.docker.com/get-docker/
+3. Pull Docker images from the provided Docker Hub repository. Simply run this command.  
+`docker pull atn021/doc-master`
 
-Navigate to wherever you saved the repo and use the following command.
+4. Navigate to where you have cloned the Github repo and deploy DocMaster with the Compose file.  
+`docker compose up`
 
-```docker compose up```
+### Without Docker Hub
+If, for whatever reason, you'd prefer to skip step 3, a Compose file is provided that builds the images from this Github repository.
+
+1. First, follow steps 1 and 2 from above.
+
+2. Navigate to where you have cloned the Github repo and use the non Docker Hub Compose file.  
+`docker compose -f docker-compose-no-hub.yml up`
