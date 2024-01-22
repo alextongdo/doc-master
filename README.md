@@ -10,14 +10,11 @@ The simplest method to deploy DocMaster is to clone this repo and use the provid
 2. Install Docker.  
 `https://docs.docker.com/get-docker/`
 
-3. Pull Docker images from the provided Docker Hub repository. Simply run this command.  
-`docker pull atn021/doc-master`
-
-4. Navigate to where you have cloned the Github repo and deploy DocMaster with the Compose file.  
+4. Navigate to where you have cloned the Github repo and use the Docker Hub Compose file.  
 `docker compose up`
 
-### Without Docker Hub
-If, for whatever reason, you'd prefer to skip step 3, a Compose file is provided that builds the images from this Github repository.
+### Platform Incompatibility
+If you encounter any platform errors, a Compose file is provided that builds the images from scratch using this Github repository.
 
 1. First, follow steps 1 and 2 from above.
 
