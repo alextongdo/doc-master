@@ -56,7 +56,7 @@ class Model(Base):
 
 
 engine = create_engine(
-    "mysql+mysqlconnector://root:root@mysql-db:3306/ersp", echo=False
+    "mysql+mysqlconnector://root:root@mysql-db:3306/ersp", echo=False, pool_recycle=3600, pool_pre_ping=True
 )
 Base.metadata.bind = engine
 
