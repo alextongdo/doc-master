@@ -12,11 +12,3 @@ The simplest method to deploy DocMaster is to clone this repo and use the provid
 
 4. Navigate to where you have cloned the Github repo and use the Docker Hub Compose file.  
 `docker compose up`
-
-### Platform Incompatibility
-If you encounter any platform errors, a Compose file is provided that builds the images from scratch using this Github repository, which is a more stable method of installation for x86 platforms.
-
-1. First, follow steps 1 and 2 from above.
-
-2. Navigate to where you have cloned the Github repo and use the non Docker Hub Compose file.  
-`docker compose -f docker-compose-no-hub.yml up`

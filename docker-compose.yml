@@ -2,7 +2,9 @@ version: "3.8"
 
 services:
   app:
-    image: atn021/doc-master:app
+    build:
+      context: .
+      dockerfile: Dockerfile
     command: python app.py
     ports:
       - "8102:8102"
@@ -13,7 +15,9 @@ services:
         condition: service_healthy
 
   worker:
-    image: atn021/doc-master:worker
+    build:
+      context: .
+      dockerfile: Dockerfile
     command: celery -A worker.celery worker --loglevel=INFO
     networks:
       - backend
