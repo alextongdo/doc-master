@@ -8,8 +8,6 @@ services:
     command: python app.py
     ports:
       - "8102:8102"
-    volumes:
-      - .:/app
     networks:
       - backend
     depends_on:
@@ -21,8 +19,6 @@ services:
       context: .
       dockerfile: Dockerfile
     command: celery -A worker.celery worker --loglevel=INFO
-    volumes:
-      - .:/app
     networks:
       - backend
     depends_on:
