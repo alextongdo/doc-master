@@ -26,7 +26,7 @@ services:
       - app
   
   mysql-db:
-    image: atn021/doc-master:mysql-db
+    image: mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: ersp
@@ -42,7 +42,7 @@ services:
       - backend
 
   redis:
-    image: atn021/doc-master:redis
+    image: redis
     ports:
       - "6379:6379"
     networks:
